@@ -5,7 +5,8 @@ public class PlayerInventory : MonoBehaviour
 {
     private int currentScore;
     [SerializeField] private TMP_Text display;
-
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip scoreClip;
     private void Start()
     {
         UpdateDisplay();
@@ -13,6 +14,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void Add(int score)
     {
+        audioSource.PlayOneShot(scoreClip);
         currentScore += score;
         UpdateDisplay();
     }

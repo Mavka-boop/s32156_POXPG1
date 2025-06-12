@@ -96,7 +96,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 4
+  m_LinearDrag: 3
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -122,8 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d82f63d918d3b3a4c8a237af548c0f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  movementSpeed: 2
   animator: {fileID: 7200795329837569443}
+  health: {fileID: 22358244438737522}
 --- !u!114 &22358244438737522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +139,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heartBarController: {fileID: 0}
   maxHealth: 100
+  isDead: 0
+  animator: {fileID: 7200795329837569443}
 --- !u!114 &3734510838776128513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,7 +219,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 441163313ec0d6046848ee9b92be4e1c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

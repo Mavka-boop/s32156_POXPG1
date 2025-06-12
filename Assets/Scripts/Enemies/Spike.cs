@@ -15,7 +15,6 @@ public class Spike : MonoBehaviour
     public void Attack(IDamagable health)
     {
         health.DoDamage(damage);
-        Debug.Log(Random.Range(1, 3));
         animator.SetTrigger($"Attack {Random.Range(1, 3)}");
     }
 }
