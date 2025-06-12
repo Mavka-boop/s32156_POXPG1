@@ -8,30 +8,25 @@ public interface IDamagable
 
 public class PlayerHealth : MonoBehaviour, IDamagable
 {
-    [SerializeField] private TMP_Text display;
+    [SerializeField] private HeartBarController heartBarController;
     [SerializeField, Range(0,1000)] private int maxHealth = 100;
     private int currentHealth;
 
     private void Start()
     {
         currentHealth = maxHealth;
-        UpdateDisplay();
+        heartBarController.CreateHearts(maxHealth);
     }
 
     public void DoDamage(int damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
-        UpdateDisplay();
+        heartBarController.TakeDamage(damage);
     }
 
     public void Heal(int amount)
     {
         currentHealth += amount;
-        UpdateDisplay();
-    }
-
-    public void UpdateDisplay()
-    {
-        display.text = $"{currentHealth}/{maxHealth}";
+        heartBarController.Heal(amount);
     }
 }
